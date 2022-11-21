@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.3a4ddde5.png">
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.a097447b.css">
+
+
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav" aria-label="Offcanvas navbar large">
+            <div class="container-lg">
+                <div>
+                    <button class="navbar-toggler nav-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+                        <img src="/icon-menu.2cbbe279.svg" alt="">
+                    </button>
+                    <a class="navbar-brand nav-logo " href="#">
+                        <img class="" src="/logo.cd13699a.svg" alt="">
+                    </a>
+                </div>
+                <div class="order-lg-1 d-flex align-items-center">
+                    <div data-bs-toggle="modal" data-bs-target="#cartModal" class="position-relative pointer nav-cart">
+                        <img src="/icon-cart.1394e5a2.svg" alt="">
+                        <div v-if="cartItems > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                            {{ cartItems }}
+                        </div>
+                    </div>
+                    <img class="ml-5 nav-avatar" src="/image-avatar.3bdd5e1c.png" alt="">
+                </div>
+
+
+                <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                    <div class="offcanvas-header justify-content-end">
+                        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end justify-content-lg-start flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Collections</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Men</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Women</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <hr class="nav-border">
+
+
+        <main class="main">
+            <div v-if="!mounted" class="d-flex justify-content-center mt-5">
+                <div class="spinner-border text-primary" role="status">
+                </div>
+            </div>
+            <div v-else="" class="container-sm">
+                <div class="row">
+                    <div class="col-md-7 col-lg-5 px-md-2 px-0 px-lg-4">
+
+                        <!-- carousel -->
+                        <carousel id="main" v-on:open-light-box="openLightBox"></carousel>
+                        <!-- carousel -->
+
+                    </div>
+                    <div class="col-md-5 col-lg-5 offset-lg-1">
+                        <div class="product">
+                            <div class="product__content">
+                                <div class="text-uppercase text-primary product__company">Sneaker Company</div>
+                                <h1 class="product__title fw-bold mt-2">{{ itemName }}</h1>
+                                <p class="product__description">{{ itemDescription }}</p>
+                            </div>
+
+                            <div class="product__pricing-group">
+                                <div class="fw-bold product__cost">$125.00
+                                    <span class="text-primary product__discount">50%</span>
+                                </div>
+                                <div class="product__reg-cost">$250.00</div>
+                            </div>
+
+
+                            <div class="product__controls">
+                                <div class="d-grid gap-2 product__increments flex-grow-1">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button :disabled="itemQuantity == 0" type="button" class="btn btn-light" @click="removeItem">
+                                            <img src="/icon-minus.da9290f9.svg" alt="">
+                                        </button>
+                                        <button type="button" disabled="" class="btn btn-light">{{ itemQuantity
+                                            }}</button>
+                                        <button type="button" class="btn btn-light " @click="addItem">
+                                            <img src="/icon-plus.05cc6b7f.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary btn-lg text-white product__cart-btn flex-grow-1" @click="addToCart">
+                                    Add to cart
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <footer></footer>
+
+        <!-- Cart Modal -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cart</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body cart">
+                        <div v-if="cartItems > 0">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div class="d-flex align-items-center">
+                                    <img class="cart__img" src="/image-product-1-thumbnail.cad5b7f9.jpg" alt="">
+                                    <div class="d-flex flex-column flex-grow-2">
+                                        <div class="cart__title">{{ truncateTitle }}</div>
+                                        <div class="cart__itemize">${{ itemPrice.toFixed(2) }} x {{ cartItems }}
+                                            <span class="ml-5 fw-bold text-black">${{ (itemPrice * cartItems).toFixed(2)
+                                                }} </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <img class="img-fluid align-self-center cart__delete pointer" @click="emptyCart" src="/icon-delete.c9dd7024.svg" alt="" title="Delete item">
+
+                            </div>
+                            <button class="btn btn-primary cart__btn">Checktout</button>
+
+                        </div>
+                        <div v-else="">Your cart is empty</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- LightBox -->
+        <div class="modal fade" id="lightBoxModal" tabindex="-1" aria-labelledby="emptyCart" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">LightBox</h1>
+                        
+                    </div> -->
+                    <div class="modal-body">
+                        <div class="text-end">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <carousel id="lightbox"></carousel>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- Vue App Wrapper End -->
+
+    <script src="/index.59a40e7a.js" defer=""></script>
+</body>
+
+</html>
+
+<template id="carousel-template">
+    <div>
+        <div :id="id" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" v-on:click="$emit('open-light-box')">
+                <div data-image="1" class="carousel-item carousel-img active">
+                    <img src="/image-product-1.5f963ded.jpg" class="d-block w-100 border-2" alt="product">
+                </div>
+                <div data-image="1" class="carousel-item carousel-img">
+                    <img src="/image-product-2.6c550b84.jpg" class="d-block w-100 border-2" alt="product">
+                </div>
+                <div data-image="1" class="carousel-item carousel-img">
+                    <img src="/image-product-3.ee366c07.jpg" class="d-block w-100 border-2" alt="product">
+                </div>
+                <div data-image="1" class="carousel-item carousel-img">
+                    <img src="/image-product-4.20ac56af.jpg" class="d-block w-100 border-2" alt="product">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#' + id" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#' + id" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="carousel-thumbnails-group d-flex justify-content-between d-none d-md-flex">
+            <img data-type="1" :data-bs-target="'#' + id" :data-bs-slide-to="0" class="img-fluid pointer carousel-thumbnails" src="/image-product-1-thumbnail.cad5b7f9.jpg" alt="">
+            <img data-type="1" :data-bs-target="'#' + id" :data-bs-slide-to="1" class="img-fluid pointer carousel-thumbnails" src="/image-product-2-thumbnail.c1078cca.jpg" alt="">
+            <img data-type="1" :data-bs-target="'#' + id" :data-bs-slide-to="2" class="img-fluid pointer carousel-thumbnails" src="/image-product-3-thumbnail.13b1e1c1.jpg" alt="">
+            <img data-type="1" :data-bs-target="'#' + id" :data-bs-slide-to="3" class="img-fluid pointer carousel-thumbnails" src="/image-product-4-thumbnail.5287685c.jpg" alt="">
+        </div>
+    </div>
+</template>

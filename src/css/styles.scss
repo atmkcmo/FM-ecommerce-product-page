@@ -1,0 +1,230 @@
+// Colors
+$orange: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+$veryDarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45%);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$gray: #a2a1a6;
+$primary: $orange;
+$btn-close-color: $primary;
+
+$max-width: 1200px;
+$container-max-widths: (
+  sm: 540px,
+  md: 760px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: $max-width,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+}
+main {
+    padding-bottom: 2em;
+    @include media-breakpoint-up(sm) { 
+        padding: 2em 0;
+    }
+}
+.pointer {
+	cursor: pointer;
+}
+
+.nav {
+    background: transparent;
+    &-border {
+        border: 1px solid $gray;
+        max-width: $max-width;
+        margin: auto;
+    }
+    
+    &-avatar {
+        border-radius: 50%;
+        margin-left: 20px;
+        max-width: 35px;
+        border: 2px solid transparent;
+        transition: .3s ease-in-out;
+        &:hover {
+            border: 2px solid $primary; 
+        }
+    }
+    .offcanvas {
+        max-width: 60%;
+    }
+    @include media-breakpoint-up(lg) { 
+        .offcanvas {
+            max-width: 100%;
+        }
+        &-avatar {
+            max-width: 50px;
+        }
+    }
+
+    &-item {
+        border-bottom: 2px solid transparent;
+        transition: .2s ease-in-out;
+        &:hover {
+            border-bottom: 2px solid $primary;
+        }
+    }
+    &-link {
+        color: $gray;
+    }
+    @include media-breakpoint-up(lg) { 
+        padding: 0em 0;
+        &-logo {
+            position: relative;
+            top: -6px;
+        }
+        &-link {
+            padding-top: 1em;
+            padding-bottom: 1em;
+
+        }
+    }
+}
+
+.carousel {
+    &-img {
+        border-radius: 10px;
+    }
+    &-thumbnails {
+        max-width: 22%;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        transition: .2s ease-in-out;
+        &:hover {
+            border: 2px solid $primary;
+            opacity: .6;
+        }
+    }
+    @include media-breakpoint-up(lg) { 
+        &-inner {
+            border-radius: 10px;
+        }
+    }
+}
+
+.product {
+    padding: 2rem 0;
+    &__company {
+        letter-spacing: 1px;
+    }
+    &__title {
+        margin-bottom: 16px;
+        font-size: 2em;
+
+    }
+    &__description {
+        color: $gray;
+    }
+    
+    &__pricing-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__cost {
+        font-size: 200%;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        
+    }
+    &__discount {
+        font-size: 19px;
+        background: $paleOrange;
+        border-radius: 2px;
+        padding: 3px 7px;
+        margin-left: 16px;
+        border-radius: 5px;
+
+    }
+    &__reg-cost {
+        color: $gray;
+        text-decoration: line-through;
+        font-size: 20px;
+    }
+
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__cart-btn {
+        display: block;
+        width: 100%;
+        margin-top: 1em;
+        .fill-icon {
+            fill: white;
+        }
+    }
+    
+    @include media-breakpoint-up(lg) { 
+        padding: 3.5rem 0 0;
+        &__pricing-group {
+            margin: 2em 0;
+            flex-direction: column;
+            // justify-content: space-between;
+            align-items: flex-start;
+        }
+        &__title {
+            font-size: 3em;
+        }
+        &__reg-cost {
+            margin-top: .5em;
+        }
+        &__controls {
+            flex-direction: row;
+            margin-top: 1em;
+        }
+        &__increments {
+            flex: 1;
+            margin-right: .5em;
+        }
+        &__cart-btn {
+            flex: 2;
+            margin-top: 0;
+            margin-left: .5em;
+        }
+    }
+}
+
+.cart {
+
+    &__img {
+        max-width: 60px;
+        border-radius: 10px;
+        margin-right: 1em;
+    }
+    &__title {
+       font-size: 14px; 
+    }
+    &__itemize {
+        color: $gray;
+    }
+    &__btn {
+        display: block;
+        width: 100%;
+        margin-top: 1em;
+        color: $white;
+    }
+}
+
+#lightBoxModal {
+    background: rgba(0,0,0,.7);
+    .modal-content {
+        background: transparent;
+        max-width: 70vh;
+        margin: auto;
+    }
+}
+
+
