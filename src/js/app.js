@@ -81,7 +81,6 @@ var app = new Vue({
 			modal.hide();
 		},
 		openLightBox() {
-			// console.log("B00B5")
 			let that = this;
 			that.lightBoxOpen = true;
 			var myModal = new bootstrap.Modal(
