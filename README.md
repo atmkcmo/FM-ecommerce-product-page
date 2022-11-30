@@ -17,7 +17,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/screenshot.png)
+![](./src/images/screenshot.png)
+
 
 - Live Site URL: [https://atmkcmo.github.io/FM-ecommerce-product-page/](https://atmkcmo.github.io/FM-ecommerce-product-page/)
 
