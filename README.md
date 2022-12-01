@@ -15,20 +15,19 @@ Users should be able to:
 - Add items to the cart
 - View the cart and remove items from it
 
-### Screenshot
-
-![](./src/images/screenshot.png)
-
-
-- Live Site URL: [https://atmkcmo.github.io/FM-ecommerce-product-page/](https://atmkcmo.github.io/FM-ecommerce-product-page/)
-
-
 ### Built with
 
 - Sass
 - Bootstap 5
 - Parcel
 - Vue 2
+
+- Live Site URL: [https://atmkcmo.github.io/FM-ecommerce-product-page/](https://atmkcmo.github.io/FM-ecommerce-product-page/)
+### Screenshot
+
+![](./src/images/screenshot.png)
+
+
 
 
 ## Project Setup
