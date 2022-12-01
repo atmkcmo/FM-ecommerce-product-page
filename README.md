@@ -22,7 +22,7 @@ Users should be able to:
 - Parcel
 - Vue 2
 
-- Live Site URL: [https://atmkcmo.github.io/FM-ecommerce-product-page/](https://atmkcmo.github.io/FM-ecommerce-product-page/)
+Live Site URL: [https://atmkcmo.github.io/FM-ecommerce-product-page/](https://atmkcmo.github.io/FM-ecommerce-product-page/)
 ### Screenshot
 
 ![](./src/images/screenshot.png)
