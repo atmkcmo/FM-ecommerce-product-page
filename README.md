@@ -17,10 +17,10 @@ Users should be able to:
 
 ### Built with
 
-- Sass
-- Bootstap 5
-- Parcel
 - Vue 2
+- Bootstap 5
+- Sass
+- Parcel
 
 Live Site URL: [https://atmkcmo.github.io/FM-ecommerce-product-page/](https://atmkcmo.github.io/FM-ecommerce-product-page/)
 ### Screenshot
