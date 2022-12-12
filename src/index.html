@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <title>Frontend Mentor | E-commerce product page</title>
+    <title>Sneakers | E-commerce product page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.scss" />
-
-
 </head>
 
 <body>
@@ -85,7 +83,6 @@
 
                         <!-- carousel -->
                         <carousel id="main" v-on:open-light-box="openLightBox"></carousel>
-                        <!-- carousel -->
 
                     </div>
                     <div class="col-md-5 col-lg-5 offset-lg-1">
@@ -118,7 +115,6 @@
                                         </button>
                                     </div>
                                 </div>
-
                                 <button class="btn btn-primary btn-lg text-white product__cart-btn flex-grow-1"
                                     @click="addToCart">
                                     Add to cart
@@ -176,10 +172,6 @@
         <div class="modal fade" id="lightBoxModal" tabindex="-1" aria-labelledby="emptyCart" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
-                    <!-- <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">LightBox</h1>
-                        
-                    </div> -->
                     <div class="modal-body">
                         <div class="text-end">
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -189,9 +181,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
     <!-- Vue App Wrapper End -->
 

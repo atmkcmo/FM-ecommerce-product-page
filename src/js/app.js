@@ -43,10 +43,7 @@ var app = new Vue({
 	computed: {
 		truncateTitle() {
 			if (window.innerWidth < 700) {
-				return `${this.itemName.substring(
-					0,
-					30
-				)}...`;
+				return `${this.itemName.substring( 0, 30 )}...`;
 			}
 			return this.itemName;
 		},
@@ -74,8 +71,7 @@ var app = new Vue({
 			this.cartItems = 0;
 			const emptyCartModal =
 				document.querySelector("#cartModal");
-			const modal =
-				bootstrap.Modal.getInstance(
+			const modal = bootstrap.Modal.getInstance(
 					emptyCartModal
 				);
 			modal.hide();
@@ -87,14 +83,10 @@ var app = new Vue({
 				document.getElementById("lightBoxModal")
 			);
 			myModal.show();
-			const myModalEl =
-				document.getElementById(
-					"lightBoxModal"
-				);
+			const myModalEl = document.getElementById( "lightBoxModal" );
 			myModalEl.addEventListener(
 				"hidden.bs.modal",
-				(event) => {
-					that.lightBoxOpen = false;
+				(event) => { that.lightBoxOpen = false;
 				}
 			);
 		},
